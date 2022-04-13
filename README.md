@@ -27,3 +27,7 @@ To use this script, follow the instruction below
 ## Contributing
 
 Contribution are absolutely welcomed! Go add extra feature, add CRON functionaliy, whatever.
+
+## License
+
+MIT
