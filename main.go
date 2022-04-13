@@ -39,7 +39,6 @@ func main() {
 	log.Println("Evaluating Absen Script on the browser")
 
 	absen_page.MustAddScriptTag("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js")
-	absen_page.MustAddScriptTag("")
 	absen_page.MustEval(`
 		() => $.each($("#jadwal > tbody > tr:nth-child(n)"),(e,a)=>{const t=$(a),d=t.find("td:eq(1)").text().split("-")[0],n=t.find("td:eq(2)").text(),s=t.find("td:eq(4)").text(),l=t.find("td:eq(5)").text(),o=t.find("td:eq(6)").text(),i=document.getElementById("kls").value;$.ajax({url:"https://akademik.polban.ac.id/ajar/absen/absensi_awal",type:"POST",data:{ja:l,jb:o,mk:n,dsn:d,tp:s,kls:i},success:e=>console.log("Kelas "+n+" dosen "+d+" sudah di absenkan"),error:(e,a,t)=>{console.error("Kelas "+n+" dosen "+d+" gagal di absenkan")}})});
 	`)
