@@ -46,8 +46,9 @@ func main() {
 
 	log.Println("Waiting for network to go to idle")
 	absen_page.MustWaitRequestIdle()
-	log.Println("Absen should be done, making sure with a picture")
 
+	log.Println("Absen should be done, making sure with a picture")
+	absen_page.MustReload().MustWaitLoad()
 	absen_page.MustScreenshot(fmt.Sprint("AbsenResult-", time.Now().Format(time.RFC3339), ".png"))
 	absen_page.MustClose()
 
